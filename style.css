@@ -9,34 +9,48 @@
 }
 .calculadora {
     display: inline-flexbox; 
-    height: 566px;
-    width: 334px;
+    height: 766px;
+    width: 338px;
     border-radius: 5px;
     background-color: #000000;
 }
 .calculadora h2 {
-    margin-top: 2%;
+    margin-top: 8%;
     text-align: center;
     color:#E6E6E6 ;
     font-family: Roboto, sans-serif;
     font-weight: 400;
+    font-size: small;
 }
 
 .calculadora .display {
-    height: 150px;
+    height: 320px;
     width: 304px;
     margin: 5%;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    background-color: #141414;
+    align-items: center;
+    
     color: #E6E6E6;
     font-size: 35px;
     font-family: Roboto, sans-serif;
+    border-style: outset;
+    border-right:#000000;
+    border-left: #000000;
+    border-top: #E6E6E6;
+}
+/*layout digitos calc*/
+
+.digitosCalc{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap:32px;
+    align-items: baseline;
+    margin-left: 12px;
 }
 .calculadora .numerosCalc{
     display: grid;
-    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
 } 
 .calculadora button{
@@ -46,16 +60,23 @@
     background-color: #000000;
     border-color: #000000;
     color: #E6E6E6;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 400, bold;
     font-family: Roboto, sans-serif;
+    cursor: pointer;
 }
-.calculadora button.controler {
-    margin: 10%;
-    height: 65px;
-    width: 58px;
-    background-color: #141414;
-    border-color: #000000;
-    color: #E6E6E6;
-    font-size: 18px;
-    font-family: Roboto, sans-serif;
+.calculadora button :hover{
+    background-color: #E6E6E6;
 }
+.calculadora .operadoresCalc .controler{
+   height: 85px;
+   width: 58px;
+   background-color: #141414;
+   border-color: #000000;
+   color: #FF7433;
+   font-size: 20px;
+   font-weight: 500, bold;
+   font-family: Roboto, sans-serif;
+   margin-top: 15px;
+}
+
