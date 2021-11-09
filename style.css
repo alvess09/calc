@@ -24,7 +24,7 @@
 }
 
 .calculadora .display {
-    height: 320px;
+    height: 330px;
     width: 304px;
     margin: 5%;
     display: flex;
@@ -53,6 +53,9 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
 } 
+.calculadora #nulo{
+    visibility: hidden;
+}
 .calculadora button{
     margin: 10%;
     height: 65px;
@@ -65,8 +68,10 @@
     font-family: Roboto, sans-serif;
     cursor: pointer;
 }
-.calculadora button :hover{
-    background-color: #E6E6E6;
+button:hover {
+    border-color: #000000;
+    color: #000000;
+    background-color: #e6e6e69f;
 }
 .calculadora .operadoresCalc .controler{
    height: 85px;
@@ -78,5 +83,11 @@
    font-weight: 500, bold;
    font-family: Roboto, sans-serif;
    margin-top: 15px;
+   cursor: pointer;
+}
+.operadoresCalc button.controler:hover {
+    border-color: #000000;
+    color: #000000;
+    background-color: #FF7433;
 }
 
