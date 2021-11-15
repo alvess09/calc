@@ -9,8 +9,8 @@
 }
 .calculadora {
     display: inline-flexbox; 
-    height: 766px;
-    width: 338px;
+    height: 736px;
+    width: 414px;
     border-radius: 5px;
     background-color: #000000;
 }
@@ -23,8 +23,8 @@
     font-size: small;
 }
 
-.calculadora .display {
-    height: 330px;
+.calculadora .display p {
+    height: 280px;
     width: 304px;
     margin: 5%;
     display: flex;
@@ -39,6 +39,8 @@
     border-left: #000000;
     border-top: #E6E6E6;
 }
+
+
 /*layout digitos calc*/
 
 .digitosCalc{

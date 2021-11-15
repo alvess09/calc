@@ -16,37 +16,70 @@
             <div class="calculadora">
                 <!-- adicionar tela de resultdo e edição dos numeros -->
                 <h2>Calculadora</h2>
-                <div class="display">=123456789</div>
+                <div class="display"><p id="resultado"></p></div>
                 <div class="digitosCalc">
                     <div class="numerosCalc">
-                        <button>7</button>
-                        <button>8</button>
-                        <button>9</button>
+                        <button onclick="insert('7')">7</button>
+                        <button onclick="insert('8')">8</button>
+                        <button onclick="insert('9')">9</button>
+                        <button onclick="insert('*')">X</button>
                         
-                        <button>4</button>
-                        <button>5</button>
-                        <button>6</button>
-                        
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
+                        <button onclick="insert('4')">4</button>
+                        <button onclick="insert('5')">5</button>
+                        <button onclick="insert('6')">6</button>
+                        <button onclick="insert('-')">-</button>
+
+                        <button onclick="insert('1')">1</button>
+                        <button onclick="insert('2')">2</button>
+                        <button onclick="insert('3')">3</button>
+                        <button onclick="insert('+')">+</button>
                         
                         <button id="nulo"></button>
-                        <button>0</button>
-                        <button>,</button>
+                        <button onclick="insert('0')">0</button>
+                        <button onclick="insert('.')">,</button>
+                        <button class="controler" onclick="calculate()">GO</button>
                     </div>
 
                     <div class="operadoresCalc">
-                        <button class="controler">AC</button>
-                        <button class="controler">DEL</button>
-                        <button class="controler">GO</button>
+                        <button class="controler" onclick="clean()">AC</button>
+                        <button class="controler" onclick="back()">DEL</button>
+                        <button class="controler" onclick="percentual()">%</button>
+                        <button class="controler" onclick="insert('/')">/</button>
+                        
                     </div>
                 </div>
             </div>
 
         </div>
     </main>
-    <script src="./script.js">
+    <script>
+        function insert (num){
+           let numero = document.getElementById('resultado').innerHTML;
+           document.getElementById('resultado').innerHTML = numero + num;
+        };
+        function clean(){
+            document.getElementById('resultado').innerHTML = "";
+        };
+        function back(){
+           let resultado = document.getElementById('resultado').innerHTML ;
+           document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1);
+        };
+        function percentual(num){
+            document.getElementById('resultado').innerHTML = num /100;
+        };
+        function calculate(){
+            let resultado = document.getElementById('resultado').innerHTML;
+            if(resultado){
+                document.getElementById('resultado').innerHTML = eval(resultado);
+            }
+            else{
+                document.getElementById('resultado').innerHTML = "";
+            }
+
+        };
+
+        
+
     </script>
 </body>
 
