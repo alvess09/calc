@@ -24,20 +24,15 @@
 }
 
 .calculadora .display p {
-    height: 280px;
-    width: 304px;
-    margin: 5%;
+    height: 200px;
+    width: 400px;
+    margin: 1.5%;
     display: flex;
     justify-content: center;
     align-items: center;
-    
     color: #E6E6E6;
     font-size: 35px;
     font-family: Roboto, sans-serif;
-    border-style: outset;
-    border-right:#000000;
-    border-left: #000000;
-    border-top: #E6E6E6;
 }
 
 
@@ -45,15 +40,15 @@
 
 .digitosCalc{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 0.9fr);
     grid-gap:32px;
     align-items: baseline;
-    margin-left: 12px;
+    margin-left: 33px;
 }
 .calculadora .numerosCalc{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 9px;
 } 
 .calculadora #nulo{
     visibility: hidden;
@@ -75,9 +70,8 @@ button:hover {
     color: #000000;
     background-color: #e6e6e69f;
 }
-.calculadora .operadoresCalc .controler{
-   height: 85px;
-   width: 58px;
+.calculadora .numerosCalc .controler{
+  
    background-color: #141414;
    border-color: #000000;
    color: #FF7433;
@@ -87,9 +81,26 @@ button:hover {
    margin-top: 15px;
    cursor: pointer;
 }
-.operadoresCalc button.controler:hover {
+.numerosCalc button.controler:hover {
     border-color: #000000;
     color: #000000;
     background-color: #FF7433;
 }
 
+.calculadora .numerosCalc .operators{
+    
+    background-color: #141414;
+    border-color: #000000;
+    color: #FF7433;
+    align-items: baseline;
+    font-size: 20px;
+    font-weight: 500, bold;
+    font-family: Roboto, sans-serif;
+    margin-top: 15px;
+    cursor: pointer;
+ }
+ .numerosCalc button.operators:hover {
+     border-color: #000000;
+     color: #000000;
+     background-color: #FF7433;
+ }

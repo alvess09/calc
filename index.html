@@ -16,57 +16,86 @@
             <div class="calculadora">
                 <!-- adicionar tela de resultdo e edição dos numeros -->
                 <h2>Calculadora</h2>
+
                 <div class="display"><p id="resultado"></p></div>
+
                 <div class="digitosCalc">
                     <div class="numerosCalc">
-                        <button onclick="insert('7')">7</button>
-                        <button onclick="insert('8')">8</button>
-                        <button onclick="insert('9')">9</button>
-                        <button onclick="insert('*')">X</button>
                         
-                        <button onclick="insert('4')">4</button>
-                        <button onclick="insert('5')">5</button>
-                        <button onclick="insert('6')">6</button>
-                        <button onclick="insert('-')">-</button>
-
-                        <button onclick="insert('1')">1</button>
-                        <button onclick="insert('2')">2</button>
-                        <button onclick="insert('3')">3</button>
-                        <button onclick="insert('+')">+</button>
-                        
-                        <button id="nulo"></button>
-                        <button onclick="insert('0')">0</button>
-                        <button onclick="insert('.')">,</button>
-                        <button class="controler" onclick="calculate()">GO</button>
-                    </div>
-
-                    <div class="operadoresCalc">
                         <button class="controler" onclick="clean()">AC</button>
                         <button class="controler" onclick="back()">DEL</button>
                         <button class="controler" onclick="percentual()">%</button>
                         <button class="controler" onclick="insert('/')">/</button>
                         
+                        <button onclick="insert(7)">7</button>
+                        <button onclick="insert(8)">8</button>
+                        <button onclick="insert(9)">9</button>
+                        <button class="operators" onclick="insert('*')">X</button>
+                        
+                        <button onclick="insert(4)">4</button>
+                        <button onclick="insert(5)">5</button>
+                        <button onclick="insert(6)">6</button>
+                        <button class="operators" onclick="insert('-')">-</button>
+
+                        <button onclick="insert(1)">1</button>
+                        <button onclick="insert(2)">2</button>
+                        <button onclick="insert(3)">3</button>
+                        <button class="operators" onclick="insert('+')">+</button>
+                        
+                        <button id="nulo"></button>
+                        <button onclick="insert(0)">0</button>
+                        <button onclick="insert('.')">,</button>
+                        <button class="controler" onclick="calculate()">GO</button>
+
                     </div>
+
                 </div>
             </div>
 
         </div>
     </main>
     <script>
-        function insert (num){
+        function insert(num){
            let numero = document.getElementById('resultado').innerHTML;
            document.getElementById('resultado').innerHTML = numero + num;
         };
+        
         function clean(){
             document.getElementById('resultado').innerHTML = "";
         };
+        
         function back(){
            let resultado = document.getElementById('resultado').innerHTML ;
            document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1);
         };
-        function percentual(num){
-            document.getElementById('resultado').innerHTML = num /100;
+        
+        function percentual(num1, num2, operator, percentual, total){
+            /*
+            ler numero 1 , operador e numero 2
+            calcular porcentagem de numero 2 em relação a numero 1  = x % de y (num1 * (num2 / 100))
+            armazenar a porcentagem para calular operador por numero 1
+
+            */
+
+            let getnumber1;
+            
+            let operator =  new Operator(false);
+             if (operator == '+'){ operator = +
+            }
+            else if(operator == '-'){ operator = -
+            }
+            else if(operator == '*'){ operator = *
+            }
+            else(operator == '/');
+
+            let getnumber2;
+            
+            let calcPercentual = getnumber1 * (getnumber2 / 100);
+
+            let calcTotal = getnumber1 + operator + calcPercentual;
+            
         };
+        
         function calculate(){
             let resultado = document.getElementById('resultado').innerHTML;
             if(resultado){
@@ -77,8 +106,6 @@
             }
 
         };
-
-        
 
     </script>
 </body>
